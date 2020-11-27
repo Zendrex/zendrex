@@ -1,6 +1,8 @@
 ## Swiggity Swooty, Here Be Me Doodie
 I program stuff sometimes. Almost everything is private. No one needs to see my poopoo code.
 
+![](https://forthebadge.com/images/badges/0-percent-optimized.svg) ![](https://forthebadge.com/images/badges/reading-6th-grade-level.svg) ![](https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg)
+
 ## Stuff I Have Done / Am Currently Doing
 * Semi-Pro bug finder for [Pterodactyl Panel](https://github.com/pterodactyl/panel)
 * Minecraft Server System Administration (2011 - Present)
