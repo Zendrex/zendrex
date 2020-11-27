@@ -1,16 +1,25 @@
-### Hi there 👋
+## Swiggity Swooty, Here Be Me Doodie
+I program stuff sometimes. Almost everything is private. No one needs to see my poopoo code.
 
-<!--
-**Zendrex/Zendrex** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I also run some game servers using Pterodactyl Panel.
 
-Here are some ideas to get you started:
+## Some Stats I Guess
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=zendrex)](https://github.com/anuraghazra/github-readme-stats)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## My Frequent Stack
+* Frontend
+  * Vue.js
+  * Nuxt.js
+  * Discord.JS
+  * Discord-Akairo
+
+* API's
+  * Firebase
+  * MongoDB
+  * MariaDB
+  * Sequelize
+
+## Contact
+* Email: email@zendrex.com
+* Twitter: @xzendrex
+* Discord: Zendrex#0001
