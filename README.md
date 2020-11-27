@@ -18,7 +18,7 @@ I program stuff sometimes. Almost everything is private. No one needs to see my 
     * Themes
     * Plugins
 
-## Some Stats I Guess
+## Some Stats I Guess - ![](https://komarev.com/ghpvc/?username=zendrex&label=PROFILE+VIEWS&style=flat-square)
 [![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=zendrex)](https://github.com/anuraghazra/github-readme-stats)
 
 ## My Frequent Stack
