@@ -30,6 +30,7 @@ I program stuff sometimes. Almost everything is private. No one needs to see my 
 * Frameworks
   * [Discord.JS](https://github.com/discordjs/discord.js/)
   * [Discord-Akairo](https://github.com/discord-akairo/discord-akairo)
+  * [Aether Framework (Coming Soon)](https://github.com/Zendrex)
 * Game Development
   * [Blender Plugin API (Python)](https://www.blender.org/)
   * [Unity / C#](https://unity.com/)
@@ -38,7 +39,6 @@ I program stuff sometimes. Almost everything is private. No one needs to see my 
   * Firebase
   * MongoDB
   * MariaDB / MySQL / SQLite
-  * 
 
 ## Contact
 * Email: email@zendrex.com
