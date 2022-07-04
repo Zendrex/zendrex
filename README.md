@@ -9,21 +9,23 @@ I program stuff sometimes. Almost everything is private. No one needs to see my 
   * Former Vanilla & Modded Server Network Owner
   * Part-Time Plugin Dev (Retired, screw Java)
 * Discord Bot Developer
-  * You might see a public bot from me someday...
+  * [Aether Framework (Coming Soon)](https://github.com/aether-development)
 * Steam Bot Develeloper
   * Bot Farm(s) ~200 Bots
   * Developed a custom bot framework on top of [SteamUser](https://github.com/DoctorMcKay/node-steam-user) & [SteamCommunity](https://github.com/DoctorMcKay/node-steamcommunity).
   * Developed a custom clusters manager & dashboard for [ASF (ArchiSteamFarm)](https://github.com/JustArchiNET/ArchiSteamFarm).
   * Developed a custom steam account generator.
-* [(Bandaged) BetterDiscord](https://github.com/rauenzi/BetterDiscordApp) Hardcore User
-  * Developed The Following For Friends/Personal
-    * Themes
-    * Plugins
-
-## Some Stats I Guess
-![Metrics](/github-metrics.svg)
+* [BetterDiscord](https://github.com/rauenzi/BetterDiscordApp)
+  * Themes
+  * Plugins
 
 ## My Frequent Stacks
+* Languages
+  * Javascript / Typescript
+  * C# / C++
+  * Java
+  * Vue
+  * Python
 * Frontend
   * [Vue.js](https://github.com/vuejs/vue)
   * [Nuxt.js](https://github.com/nuxt/nuxtjs.org)
@@ -37,5 +39,6 @@ I program stuff sometimes. Almost everything is private. No one needs to see my 
 
 ## Contact
 * Email: email@zendrex.com
-* Twitter: @xzendrex
+* Twitter: [@xzendrex](https://twitter.com/xzendrex)
 * Discord: Zendrex#0001
+* Website: https://zendrex.com
