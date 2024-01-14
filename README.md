@@ -24,21 +24,22 @@ I program stuff sometimes. Almost everything is private. No one needs to see my 
   * Javascript / Typescript
   * C# / C++
   * Java
-  * Vue
   * Python
 * Frontend
   * [Vue.js](https://github.com/vuejs/vue)
   * [Nuxt.js](https://github.com/nuxt/nuxtjs.org)
+  * [React](https://github.com/facebook/react)
+  * [NextJS](https://github.com/vercel/next.js)
 * Frameworks / Libraries
   * [Discord.JS](https://github.com/discordjs/discord.js/)
   * [Aether Framework (Coming Soon)](https://github.com/aether-development)
 * Game Development
-  * [Blender Plugin API (Python)](https://www.blender.org/)
   * [Unity / C#](https://unity.com/)
+  * [Blender Plugin API (Python)](https://www.blender.org/)
   * [Udon# / VRChat](https://github.com/vrchat-community/UdonSharp)
 
 ## Contact
 * Email: email@zendrex.com
 * Twitter: [@xzendrex](https://twitter.com/xzendrex)
-* Discord: Zendrex#0001
+* Discord: zendrex
 * Website: https://zendrex.com
