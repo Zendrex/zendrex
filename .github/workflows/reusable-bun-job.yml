@@ -44,7 +44,7 @@ jobs:
         with:
           bun-version: ${{ inputs.bun-version }}
       - name: Run Script
-        run: bun ${{ inputs.script-name }}
+        run: bun run ${{ inputs.script-name }}
         env:
           GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_AUTH_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
