@@ -114,4 +114,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          bun x npm publish --tag {TAG} --registry https://npm.pkg.github.com/${{ github.repository_owner }}
+          bun x npm publish --tag ${TAG} --registry https://npm.pkg.github.com/${{ github.repository_owner }}
