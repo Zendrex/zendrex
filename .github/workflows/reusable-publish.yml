@@ -38,10 +38,13 @@ on:
         default: false
         type: boolean
       registry:
-        description: The registry to publish to, either `npm` or `github`
+        description: The registry to publish to, either `npm`, `github` or `both`
         required: true
         type: string
     secrets:
+      GH_AUTH_TOKEN:
+        description: The token to authenticate with the Github registry
+        required: false
       NPM_AUTH_TOKEN:
         description: The token to authenticate with the NPM registry
         required: false
@@ -64,10 +67,24 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: ${{ inputs.with-submodules }}
 
-      - name: Install Dependencies
-        uses: zendrex/zendrex/.github/actions/install-bun-dependencies@main
-        with:
-          bun-version: ${{ inputs.bun-version }}
+      - name: Check Required Secrets
+        env:
+          REGISTRY: ${{ inputs.registry }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          GH_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
+        run: |
+          if [[ "$REGISTRY" == "npm" || "$REGISTRY" == "both" ]]; then
+            if [[ -z "$NPM_AUTH_TOKEN" ]]; then
+              echo "Error: NPM_AUTH_TOKEN is required when publishing to npm registry."
+              exit 1
+            fi
+          fi
+          if [[ "$REGISTRY" == "github" || "$REGISTRY" == "both" ]]; then
+            if [[ -z "$GH_AUTH_TOKEN" ]]; then
+              echo "Error: GH_AUTH_TOKEN is required when publishing to GitHub registry."
+              exit 1
+            fi
+          fi
 
       - name: Configure Git
         run: |
@@ -79,22 +96,15 @@ jobs:
           GITHUB_EMAIL: zendrex+github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Configure Package Registries
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          REGISTRY: ${{ inputs.registry }}
-        run: |
-          if [ "${REGISTRY}" = "npm" ]; then
-            echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ~/.npmrc
-          fi
-          if [ "${REGISTRY}" = "github" ]; then
-            echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
-          fi
+      - name: Install Dependencies
+        uses: zendrex/zendrex/.github/actions/install-bun-dependencies@main
+        with:
+          bun-version: ${{ inputs.bun-version }}
 
       - name: Build
-        if: inputs.build
-        run: yarn build
+        if: ${{ inputs.build }}
+        run: bun build
+
       - name: Bump Versions and make release
         working-directory: ${{ inputs.working-directory }}
         run: |
@@ -109,13 +119,21 @@ jobs:
       - name: Publish to NPM Registry
         if: ${{ inputs.registry == 'npm' }}
         working-directory: ${{ inputs.working-directory }}
-        run: |
-          bun x npm publish --registry https://registry.npmjs.org/
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${AUTH_TOKEN}" > ~/.npmrc
+
+          bun x npm publish --registry https://registry.npmjs.org/
 
       - name: Publish to GitHub Registry
         if: ${{ inputs.registry == 'github' }}
         working-directory: ${{ inputs.working-directory }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
         run: |
+          echo "//npm.pkg.github.com/:_authToken=${AUTH_TOKEN}" > ~/.npmrc
+
           bun x npm publish --registry https://npm.pkg.github.com/${{ github.repository_owner }}
