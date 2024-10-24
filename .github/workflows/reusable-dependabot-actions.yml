@@ -23,7 +23,7 @@ jobs:
     runs-on: ${{ inputs.operating-system}}
     if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == inputs.repo
     steps:
-      - name: Dependabot metadata
+      - name: Dependabot Metadata
         id: metadata
         uses: dependabot/fetch-metadata@v2
         with:

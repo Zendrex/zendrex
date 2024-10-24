@@ -25,10 +25,10 @@ on:
 
 jobs:
   label-sync:
-    name: Label sync
+    name: Label Sync
     runs-on: ${{ inputs.operating-system }}
     steps:
-      - name: Checkout Core labels
+      - name: Checkout Core Labels
         uses: actions/checkout@v4
         with:
           path: core-labels
@@ -49,7 +49,7 @@ jobs:
         if: inputs.merge-labels == true
         run: |
           yq '. *+ load("core-labels/.github/labels.yml")' overwrite-labels/.github/labels.yml > labels.yml
-      - name: Move core labels
+      - name: Move Core labels
         if: inputs.merge-labels == false
         run: mv core-labels/.github/labels.yml labels.yml
       - name: Run Label Sync

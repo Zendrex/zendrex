@@ -32,18 +32,18 @@ on:
 
 jobs:
   run-job:
-    name: Run Bun job
+    name: Run Script
     runs-on: ${{ inputs.operating-system }}
     steps:
       - name: Checkout Project
         uses: actions/checkout@v4
         with:
           submodules: ${{ inputs.with-submodules }}
-      - name: Install dependencies
+      - name: Install Dependencies
         uses: zendrex/zendrex/.github/actions/install-bun-dependencies@main
         with:
           bun-version: ${{ inputs.bun-version }}
-      - name: Run job
+      - name: Run Script
         run: bun ${{ inputs.script-name }}
         env:
           GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_AUTH_TOKEN }}
