@@ -8,6 +8,8 @@ I program stuff sometimes. Almost everything is private, sorry :)
   * [Shogun](https://shogun.gg) - A Discord bot tailor made for the official [Discord Server](https://discord.gg/supervive)
   * [supervive-api-types](https://github.com/zendrex/supervive-api-types) - An API types library for SUPERVIVE (_coming soon_)
   * [supervive.js](https://github.com/zendrex/supervive.js) - A client wrapper for the SUPERVIVE API (_coming soon_)
+  * Lead Developer - [OOO Tech / Kickback&Vive](https://discord.gg/Ds2arPM4KS)
+  * Tournament Admin, Analytics & Developer - [UNITE Esports](https://x.com/UNITEesports)
 * Aether Development
   * [aether.js](https://github.com/aether-development/aether.js) - A Discord bot framework.
     * The core of [Shogun](https://shogun.gg) & related projects
