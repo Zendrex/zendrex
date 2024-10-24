@@ -95,6 +95,8 @@ jobs:
 
       - name: Bump Version
         working-directory: ${{ inputs.working-directory }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bun run bump --preid "${TAG}.$(git rev-parse --short HEAD)" --skip-changelog
 
