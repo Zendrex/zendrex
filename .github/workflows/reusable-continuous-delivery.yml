@@ -93,21 +93,19 @@ jobs:
             echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
           fi
 
-      - name: Bump Version
+      - name: Bump Version & Publish to NPM Registry
+        if: ${{ inputs.registry == 'npm' }}
         working-directory: ${{ inputs.working-directory }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          bun run bump --preid "${TAG}.$(git rev-parse --short HEAD)" --skip-changelog
-
-      - name: Publish to NPM Registry
-        if: ${{ inputs.registry == 'npm' }}
-        working-directory: ${{ inputs.working-directory }}
-        run: |
+         bun run bump --preid "${TAG}.$(git rev-parse --short HEAD)" --skip-changelog
           bun x npm publish --tag ${TAG} --registry https://registry.npmjs.org/
 
-      - name: Publish to GitHub Registry
+      - name: Publish Next to GitHub Registry
         if: ${{ inputs.registry == 'github' }}
         working-directory: ${{ inputs.working-directory }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          bun x npm publish --tag ${TAG} --registry https://npm.pkg.github.com/${{ github.repository_owner }}
+          bun x npm publish --tag next --registry https://npm.pkg.github.com/${{ github.repository_owner }}
