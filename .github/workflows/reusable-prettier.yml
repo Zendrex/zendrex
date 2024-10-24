@@ -22,7 +22,7 @@ on:
 jobs:
   prettier:
     name: Prettier checking
-    uses: zendred/zendrex/.github/workflows/reusable-bun-job.yml@main
+    uses: zendrex/zendrex/.github/workflows/reusable-bun-job.yml@main
     with:
       script-name: format:check
       operating-system: ${{ inputs.operating-system }}

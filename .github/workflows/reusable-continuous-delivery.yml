@@ -1,4 +1,4 @@
-name: publish npm
+name: publish github
 
 on:
   workflow_call:
@@ -41,10 +41,17 @@ on:
         required: false
         default: false
         type: boolean
-    secrets:
-      NODE_AUTH_TOKEN:
-        description: The token to authenticate with the NPM registry
+      registry:
+        description: The registry to publish to, either `npm`, `github`, or `both`
         required: true
+        type: string
+    secrets:
+      GITHUB_AUTH_TOKEN:
+        description: The token to authenticate with the GitHub registry
+        required: false
+      NPM_AUTH_TOKEN:
+        description: The token to authenticate with the NPM registry
+        required: false
 
 concurrency:
   group: ${{ github.workflow }}|${{ github.head_ref || github.ref }}|${{ inputs.working-directory }}|${{ inputs.operating-system }}|${{ inputs.repository }}|${{ inputs.bun-version }}
@@ -54,7 +61,9 @@ jobs:
   publish:
     name: Continuous Delivery
     runs-on: ${{ inputs.operating-system }}
-    if: github.repository_owner == 'zendrex'
+    if: ${{ github.repository_owner == 'zendrex' }}
+    env:
+      TAG: ${{ github.event_name == 'push' && 'next' || format('pr-{0}', inputs['pr-number']) }}
     steps:
       - name: Checkout Project
         uses: actions/checkout@v4
@@ -63,25 +72,45 @@ jobs:
           repository: ${{ inputs.repository }}
           ref: ${{ inputs.ref }}
           submodules: ${{ inputs.with-submodules }}
+
       - name: Install dependencies
         uses: zendrex/zendrex/actions/install-bun-dependencies.yml@main
         with:
           bun-version: ${{ inputs.bun-version }}
+
       - name: Build
-        if: inputs.build
+        if: ${{ inputs.build }}
         run: bun build
-      - name: Configure npm for NPM Registry
-        run: echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > ~/.npmrc
-      - name: Bump Version & Publish
+
+      - name: Configure npm for Package Registries
+        env:
+          GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          if [[ -n "${GITHUB_AUTH_TOKEN}" ]]; then
+            echo '//npm.pkg.github.com/:_authToken=${GITHUB_AUTH_TOKEN}' >> ~/.npmrc
+          fi
+          if [[ -n "${NPM_AUTH_TOKEN}" ]]; then
+            echo '//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}' >> ~/.npmrc
+          fi
+
+      - name: Bump Version
         working-directory: ${{ inputs.working-directory }}
         run: |
-          # Resolve the tag to be used. "next" for push events, "pr-${{ inputs.pr-number }}" for dispatch events.
-          TAG=$([[ $GITHUB_EVENT_NAME == 'push' ]] && echo 'next' || echo 'pr-${{ inputs.pr-number }}')
+          bun run bump --preid "${TAG}.$(git rev-parse --short HEAD)" --skip-changelog
 
-          # Bump version
-          bun run bump --preid "${TAG}.$(git rev-parse --verify --short HEAD)" --skip-changelog
-
-          # Publish to NPM Registry
-          bun x npm publish --tag ${TAG}
+      - name: Publish to NPM Registry
+        if: ${{ inputs.registry == 'npm' || inputs.registry == 'both' }}
+        working-directory: ${{ inputs.working-directory }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bun x npm publish --tag ${TAG} --registry https://registry.npmjs.org/
+
+      - name: Publish to GitHub Packages
+        if: ${{ inputs.registry == 'github' || inputs.registry == 'both' }}
+        working-directory: ${{ inputs.working-directory }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bun x npm publish --tag ${TAG} --registry https://npm.pkg.github.com/${{ github.repository_owner }}
