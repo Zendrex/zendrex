@@ -74,7 +74,7 @@ jobs:
           submodules: ${{ inputs.with-submodules }}
 
       - name: Install dependencies
-        uses: zendrex/zendrex/actions/install-bun-dependencies.yml@main
+        uses: zendrex/zendrex/actions/install-bun-dependencies@main
         with:
           bun-version: ${{ inputs.bun-version }}
 
