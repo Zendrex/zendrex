@@ -26,5 +26,5 @@ jobs:
     with:
       script-name: lint --fix=false
       operating-system: ${{ inputs.operating-system }}
-      bun-version: ${{ inputs.node-version }}
+      bun-version: ${{ inputs.bun-version }}
       with-submodules: ${{ inputs.with-submodules }}
