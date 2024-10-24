@@ -35,10 +35,12 @@ _Ordered By Fluency/Usage_
   * [NextJS](https://github.com/vercel/next.js)
   * [Nuxt.js](https://github.com/nuxt/nuxtjs.org)
 * Libraries & Tooling
+  * Docker
   * [Bun](https://bun.sh)
   * [DrizzleORM](https://orm.drizzle.team/)
   * [Elysia](https://elysiajs.com/)
   * [Typebox](https://github.com/sinclairzx81/typebox)
+  * Ansible & Terraform
 * Game Development
   * [Unity / C#](https://unity.com/)
   * [VRChat / Udon#](https://github.com/vrchat-community/UdonSharp)
