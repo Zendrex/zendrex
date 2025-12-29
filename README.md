@@ -21,7 +21,7 @@ Building tools and infrastructure for the SUPERVIVE community:
 - **Development & Integrations Lead** (2025-present) - [TURBOVIVE](https://discord.gg/VNyU8XGFKP)
 
 ### Open Source
-- **[Basis](https://github.com/BasisVR/basis)** - An open-source social framework for VR and Desktop usage.
+- **[Contributor] [Basis](https://github.com/BasisVR/basis)** - An open-source social framework for VR and Desktop usage.
 
 ---
 
