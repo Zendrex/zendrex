@@ -1,53 +1,73 @@
-## Swiggity Swooty, Here Be Me Doodie
-I program stuff sometimes. Almost everything is private, sorry :)
+
+## Hello & My Ted Talk
+
+Full-stack developer specializing in **TypeScript** and the modern **Bun** ecosystem. I build high-performance APIs, web applications and more.
+
+_Note: Most of my work is private, but the good stuff is listed below._
+
 
 ![](https://forthebadge.com/images/badges/0-percent-optimized.svg) ![](https://forthebadge.com/images/badges/reading-6th-grade-level.svg) ![](https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg)
 
-## Stuff I Have Done / Am Currently Doing
-* SUPERVIVE / Theorycraft Games
-  * [Shogun](https://shogun.gg) - A Discord bot tailor made for the official [Discord Server](https://discord.gg/supervive)
-  * [supervive-api-types](https://github.com/zendrex/supervive-api-types) - An API types library for SUPERVIVE (_coming soon_)
-  * [supervive.js](https://github.com/zendrex/supervive.js) - A client wrapper for the SUPERVIVE API (_coming soon_)
-  * Lead Developer - [OOO Tech / Kickback&Vive](https://discord.gg/Ds2arPM4KS)
-  * Tournament Admin, Analytics & Developer - [UNITE Esports](https://x.com/UNITEesports)
-* Aether Development
-  * [aether.js](https://github.com/aether-development/aether.js) - A Discord bot framework.
-    * The core of [Shogun](https://shogun.gg) & related projects
-* Game Server System Administration
-  * Minecraft (2011 - 2021)
-    * Former Vanilla & Modded Server Network Owner
-    * Systems Engineer & Plugin Developer - Minecraft
-  * Rust, TF2 & More (2014 - 2018)
-* [Steam](https://steamcommunity.com/id/imnotzendrex)
-  * Account management tooling, utilizes [SteamUser](https://github.com/DoctorMcKay/node-steam-user) & [SteamCommunity](https://github.com/DoctorMcKay/node-steamcommunity)
-  * Clusters manager & dashboard for [ASF (ArchiSteamFarm)](https://github.com/JustArchiNET/ArchiSteamFarm)
-* [BetterDiscord](https://github.com/rauenzi/BetterDiscordApp) / [Vencord](https://vencord.dev/)
-  * Plugin & Themes
-* Semi-Pro bug hunter for [Pterodactyl Panel](https://pterodactyl.io/) & [Pellican Panel](https://pelican.dev/)
+## Current Projects
 
-## My Frequent Stacks
-_Ordered By Fluency/Usage_
-* Languages 
-  * Javascript / Typescript
-  * C#
-  * Java
-* Frontend
-  * [NextJS](https://github.com/vercel/next.js)
-  * [Nuxt.js](https://github.com/nuxt/nuxtjs.org)
-* Libraries & Tooling
-  * Docker
-  * [Bun](https://bun.sh)
-  * [DrizzleORM](https://orm.drizzle.team/)
-  * [Elysia](https://elysiajs.com/)
-  * [Typebox](https://github.com/sinclairzx81/typebox)
-  * Ansible & Terraform
-* Game Development
-  * [Unity / C#](https://unity.com/)
-  * [VRChat / Udon#](https://github.com/vrchat-community/UdonSharp)
-  * [Blender Plugin API (Python)](https://www.blender.org/)
+### SUPERVIVE / Theorycraft Games
+Building tools and infrastructure for the SUPERVIVE community:
+- **[Shogun](https://shogun.gg)** - Production Discord bot for the official [SUPERVIVE Discord](https://discord.gg/supervive) server
+- **[supervive-api](https://github.com/zendrex/supervive-api)** - The unofficial, but kinda official API for SUPERVIVE. (_coming never...sadly_)
+
+### Community & ESports
+- **Development Lead** (2022–present) – [OOO Tech / Kickback&Vive](https://discord.gg/Ds2arPM4KS)
+- **Tournament Admin, Analytics & Developer** (2023–present) – [UNITE Esports - SUPERVIVE](https://x.com/UNITEesports)
+- **Development & Integrations Lead** (2025-present) - [TURBOVIVE](https://discord.gg/VNyU8XGFKP)
+
+### Open Source
+- **[Basis](https://github.com/BasisVR/basis)** - An open-source social framework for VR and Desktop usage.
+
+---
+
+## Tech Stack
+
+**Primary:** TypeScript/JavaScript • Bun • Node.js
+
+**Backend:** Elysia • DrizzleORM • Zod/TypeBox • REST APIs
+
+**Frontend:** Next.js • React • Nuxt.js • Vue
+
+**Infrastructure:** Docker • Ansible • Terraform
+
+**Also work with:** C# • Java • Python
+
+---
 
 ## Contact
-* Email: email@zendrex.com
-* Twitter: [@xzendrex](https://twitter.com/xzendrex)
-* Discord: zendrex
-* Website: https://zendrex.com
+
+**Open to freelance, contract, and full-time opportunities.**
+
+- **Email:** email@zendrex.com
+- **Website:** https://zendrex.com
+- **Discord:** zendrex
+- **Twitter:** [@xzendrex](https://twitter.com/xzendrex)
+
+---
+
+<details>
+<summary><b>Past Work & Side Projects</b></summary>
+
+### Game Server Administration
+- **Minecraft** (2011-2021) - Former Vanilla & Modded Server Network Owner, Systems Engineer & Plugin Developer
+- **Rust, TF2 & More** (2014-2018)
+
+### Steam Tooling
+- Account management tools using [SteamUser](https://github.com/DoctorMcKay/node-steam-user) & [SteamCommunity](https://github.com/DoctorMcKay/node-steamcommunity)
+- Cluster manager & dashboard for [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm)
+
+### Community Projects
+- **[BetterDiscord](https://github.com/rauenzi/BetterDiscordApp) / [Vencord](https://vencord.dev/)** - Custom plugins & themes
+- **Bug hunting** for [Pterodactyl Panel](https://pterodactyl.io/) & [Pelican Panel](https://pelican.dev/)
+
+### Game Development
+- Unity/C# projects
+- [VRChat / Udon#](https://github.com/vrchat-community/UdonSharp) development
+- [Blender Plugin API](https://www.blender.org/) (Python)
+
+</details>
