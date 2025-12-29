@@ -1,5 +1,5 @@
 
-## Hello & My Ted Talk
+## Hello & Welcome To My Ted Talk
 
 Full-stack developer specializing in **TypeScript** and the modern **Bun** ecosystem. I build high-performance APIs, web applications and more.
 
