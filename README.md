@@ -15,13 +15,19 @@ Building tools and infrastructure for the SUPERVIVE community:
 - **[Shogun](https://shogun.gg)** - Production Discord bot for the official [SUPERVIVE Discord](https://discord.gg/supervive) server
 - **[supervive-api](https://github.com/zendrex/supervive-api)** - The unofficial, but kinda official API for SUPERVIVE. (_coming never...sadly_)
 
-### Community & ESports
+### Community & Esports
 - **Development Lead** (2022–present) – [OOO Tech / Kickback&Vive](https://discord.gg/Ds2arPM4KS)
 - **Tournament Admin, Analytics & Developer** (2023–present) – [UNITE Esports - SUPERVIVE](https://x.com/UNITEesports)
 - **Development & Integrations Lead** (2025-present) - [TURBOVIVE](https://discord.gg/VNyU8XGFKP)
 
-### Open Source
-- **[Basis](https://github.com/BasisVR/basis)** - An open-source social framework for VR and Desktop usage.
+### TypeScript Libraries
+- **[annotate](https://github.com/Zendrex/annotate)** - A modern decorator and metadata system for TypeScript with built-in reflection.
+- **[aether-object](https://github.com/Zendrex/aether-object)** - An Elysia-inspired TypeScript library for runtimes.
+- **[buttplug.js](https://github.com/Zendrex/buttplug.js)** - Intimate hardware control for modern JavaScript.
+- **[object-tree](https://github.com/Zendrex/object-tree)** - An object tree renderer for the console.
+
+### Open Source Contributions
+- **[BasisVR/Basis](https://github.com/BasisVR/Basis)** - Contributor to the open-source social framework for VR and Desktop.
 
 ---
 
